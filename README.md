@@ -50,7 +50,6 @@ step, no frameworks, no external JS libraries.
 
 1. **Profile photo** → replace `assets/images/profile.jpg` (square image works best). See the comment in `index.html` near the hero.
 2. **Resume** → replace `assets/resume/shreya_goyal_resume.pdf` with your real PDF.
-3. **YouTube link** → update the handle in the Contact section of `index.html` if your channel URL differs from `youtube.com/@shreyagoyal`.
 
 ---
 
