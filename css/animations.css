@@ -1,0 +1,86 @@
+/* ============================================================
+   animations.css
+   All @keyframes, transitions and scroll-reveal states.
+   ============================================================ */
+
+/* === SCROLL REVEAL (toggled by Intersection Observer in animations.js) === */
+.reveal {
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger child cards when their section reveals */
+.reveal.visible .bento-card,
+.reveal.visible .cert-card,
+.reveal.visible .skill-group,
+.reveal.visible .ach-card {
+  animation: rise 0.6s ease both;
+}
+.reveal.visible .skill-group:nth-child(2) { animation-delay: 0.06s; }
+.reveal.visible .skill-group:nth-child(3) { animation-delay: 0.12s; }
+.reveal.visible .skill-group:nth-child(4) { animation-delay: 0.18s; }
+.reveal.visible .skill-group:nth-child(5) { animation-delay: 0.24s; }
+.reveal.visible .cert-card:nth-child(2) { animation-delay: 0.05s; }
+.reveal.visible .cert-card:nth-child(3) { animation-delay: 0.1s; }
+.reveal.visible .cert-card:nth-child(4) { animation-delay: 0.15s; }
+.reveal.visible .cert-card:nth-child(5) { animation-delay: 0.2s; }
+.reveal.visible .cert-card:nth-child(6) { animation-delay: 0.25s; }
+.reveal.visible .cert-card:nth-child(7) { animation-delay: 0.3s; }
+
+/* === KEYFRAMES === */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* gentle bob for the scroll cue arrow */
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(6px); }
+}
+
+/* blinking typewriter cursor */
+@keyframes blink {
+  0%, 49%  { opacity: 1; }
+  50%, 100%{ opacity: 0; }
+}
+.tw-cursor { animation: blink 1s step-end infinite; }
+
+/* hero name circle draws itself in once on load */
+@keyframes draw {
+  from { stroke-dashoffset: 600; }
+  to   { stroke-dashoffset: 0; }
+}
+.name-circle path {
+  stroke-dasharray: 600;
+  animation: draw 1.4s ease 0.4s both;
+}
+
+/* underline doodles draw in when their section reveals */
+.reveal.visible .underline-doodle path {
+  stroke-dasharray: 300;
+  animation: draw 1s ease both;
+}
+
+/* slow float for hero greeting */
+@keyframes floaty {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50%      { transform: translateY(-5px) rotate(1deg); }
+}
+.hero-greeting { animation: floaty 4s ease-in-out infinite; }
+
+/* === REDUCED MOTION: honour user preference === */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}

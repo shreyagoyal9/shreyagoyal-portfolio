@@ -1,0 +1,78 @@
+/* ============================================================
+   responsive.css
+   All media queries. Mobile-first breakpoints:
+   320px (base) → 768px → 1024px → 1440px
+   ============================================================ */
+
+/* === TABLET & BELOW (<= 1024px) === */
+@media (max-width: 1024px) {
+  main > section { padding: 80px 22px; }
+  .hero-inner { gap: 32px; }
+  .name-circle { left: -6%; width: 112%; }
+}
+
+/* === MOBILE NAV + STACKED LAYOUTS (<= 768px) === */
+@media (max-width: 768px) {
+  html { scroll-padding-top: 72px; }
+
+  /* --- Navbar collapses to slide-in menu --- */
+  .hamburger { display: flex; }
+  .nav-links {
+    position: fixed; top: 0; right: 0;
+    height: 100vh; width: min(78vw, 320px);
+    flex-direction: column;
+    justify-content: center; align-items: center;
+    gap: 30px;
+    background: var(--card);
+    box-shadow: var(--shadow-lift);
+    transform: translateX(105%);
+    transition: transform 0.35s ease;
+    z-index: 999;
+  }
+  .nav-links.open { transform: translateX(0); }
+  .nav-link { font-size: 1.3rem; }
+
+  /* --- Hero stacks, photo on top --- */
+  .hero { padding-top: 104px; text-align: center; }
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-visual { order: -1; margin-bottom: 8px; }
+  .hero-cta { justify-content: center; }
+  .photo-note { right: 4%; }
+  .scroll-cue { display: none; }
+
+  /* --- About & achievements stack --- */
+  .about-grid { grid-template-columns: 1fr; gap: 30px; }
+  .facts-card { transform: rotate(0.6deg); }
+  .ach-grid { grid-template-columns: 1fr; }
+
+  /* --- Bento collapses to single column --- */
+  .bento { grid-template-columns: 1fr; }
+  .bento-card.large, .bento-card.small { grid-column: span 1; }
+
+  /* --- Disable section snap on mobile (feels janky on touch) --- */
+  html { scroll-snap-type: none; }
+}
+
+/* === SMALL PHONES (<= 480px) === */
+@media (max-width: 480px) {
+  main > section { padding: 64px 18px; }
+  .hero-title { font-size: clamp(2.2rem, 11vw, 3rem); }
+  .hero-subtitle { font-size: 1.4rem; }
+  .contact-buttons { flex-direction: column; }
+  .contact-buttons .btn { width: 100%; justify-content: center; }
+  .cert-grid { grid-template-columns: 1fr; }
+  .badge { font-size: 0.85rem; padding: 8px 13px; }
+}
+
+/* === VERY SMALL (320px safety) === */
+@media (max-width: 360px) {
+  .nav-logo { font-size: 1.25rem; }
+  .hero-greeting { font-size: 1.25rem; }
+  .btn { padding: 11px 16px; font-size: 0.88rem; }
+}
+
+/* === LARGE DESKTOP (>= 1440px) === */
+@media (min-width: 1440px) {
+  main > section, .hero { max-width: 1280px; }
+  .section-title { font-size: 3rem; }
+}

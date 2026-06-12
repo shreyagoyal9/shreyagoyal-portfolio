@@ -1,0 +1,29 @@
+# ============================================================
+# netlify.toml — Netlify configuration for a static site.
+# Pure HTML + CSS + vanilla JS, so there is NO build step.
+# ============================================================
+
+[build]
+  # Nothing to compile — publish the repository root as-is.
+  publish = "."
+  command = ""
+
+# Send proper caching + security headers.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Long-cache static assets (they are versioned by content/edits).
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# Single-page-ish fallback so unknown paths land on the home page.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

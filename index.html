@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Shreya Goyal — Full-Stack Developer, AI/ML Engineer & Artist. B.Tech CSE (AI/ML) at VIT Bhopal." />
+  <meta name="author" content="Shreya Goyal" />
+  <title>Shreya Goyal — Developer · Artist · Problem Solver</title>
+
+  <!-- ===FAVICON (tiny inline doodle star)=== -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>✦</text></svg>" />
+
+  <!-- ===GOOGLE FONTS: Playfair Display (headings) · Inter (body) · Caveat (handwritten)=== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet" />
+
+  <!-- ===STYLESHEETS (order matters: themes → style → animations → responsive)=== -->
+  <link rel="stylesheet" href="css/themes.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- ===CUSTOM CURSOR DOT (desktop only, switches to paintbrush over art areas)=== -->
+  <div class="cursor-brush" id="cursorBrush" aria-hidden="true">
+    <svg viewBox="0 0 24 24" width="24" height="24"><path d="M3 21c2 0 4-1 4-3 0-1.5-1.5-2-2.5-2S2 17 2 18.5C2 20 2 21 3 21z" fill="currentColor"/><path d="M6.5 15.5 16 6c1-1 3 1 2 2l-9.5 9.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </div>
+
+  <!-- ===NAVBAR=== -->
+  <header>
+    <nav class="navbar" id="navbar" aria-label="Primary">
+      <a href="#home" class="nav-logo" aria-label="Go to home">
+        Shreya<span class="logo-dot">✦</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#certifications" class="nav-link">Certifications</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- ===DARK / LIGHT MODE TOGGLE (sun doodle / moon doodle)=== -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light mode" type="button">
+          <!-- Sun doodle (shown in dark mode → click for light) -->
+          <svg class="icon-sun" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/>
+            <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <line x1="12" y1="1.5" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.5"/>
+              <line x1="1.5" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.5" y2="12"/>
+              <line x1="4.2" y1="4.2" x2="6" y2="6"/><line x1="18" y1="18" x2="19.8" y2="19.8"/>
+              <line x1="19.8" y1="4.2" x2="18" y2="6"/><line x1="6" y1="18" x2="4.2" y2="19.8"/>
+            </g>
+          </svg>
+          <!-- Moon doodle (shown in light mode → click for dark) -->
+          <svg class="icon-moon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+            <path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M16 4.5l.6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4-1.4-.6 1.4-.6z" fill="currentColor"/>
+          </svg>
+        </button>
+
+        <!-- ===HAMBURGER (mobile)=== -->
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" type="button">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===HERO=== -->
+    <section id="home" class="hero">
+      <!-- Floating doodle background elements (parallax on mousemove) -->
+      <div class="hero-doodles" id="heroDoodles" aria-hidden="true">
+        <svg class="doodle d1" data-depth="0.4" viewBox="0 0 40 40"><path d="M20 2l4 12 12 4-12 4-4 12-4-12-12-4 12-4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <svg class="doodle d2" data-depth="0.8" viewBox="0 0 30 30"><circle cx="15" cy="15" r="6" fill="currentColor"/></svg>
+        <svg class="doodle d3" data-depth="0.6" viewBox="0 0 50 30"><path d="M2 20c10-18 36-18 46 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+        <svg class="doodle d4" data-depth="1.0" viewBox="0 0 24 24"><path d="M12 2l2.5 7H22l-6 4.5 2.3 7L12 16l-6.3 4.5L8 13.5 2 9h7.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <svg class="doodle d5" data-depth="0.5" viewBox="0 0 30 30"><circle cx="15" cy="15" r="4" fill="currentColor"/></svg>
+        <svg class="doodle d6" data-depth="0.9" viewBox="0 0 60 24"><path d="M2 12c6-8 14 8 20 0s14-8 20 0 14 8 16 0" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+      </div>
+
+      <div class="hero-inner">
+        <div class="hero-text">
+          <p class="hero-greeting handwritten">hello there ✦</p>
+          <h1 class="hero-title">
+            Hi, I'm
+            <span class="hero-name">
+              Shreya
+              <!-- Hand-drawn circle highlight around the name -->
+              <svg class="name-circle" viewBox="0 0 220 90" aria-hidden="true" preserveAspectRatio="none">
+                <path d="M40 18C90 4 170 6 200 30c22 18 8 48-40 56C100 96 28 84 14 56 2 32 22 22 60 16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+            </span>
+          </h1>
+          <p class="hero-subtitle handwritten">developer. artist. problem solver.</p>
+
+          <!-- Typewriter rotates roles -->
+          <p class="hero-typewriter">
+            <span class="tw-prefix">I'm a </span>
+            <span class="tw-text" id="typewriter"></span><span class="tw-cursor" aria-hidden="true">|</span>
+          </p>
+
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">View My Work
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <!-- PLACEHOLDER: replace assets/resume/shreya_goyal_resume.pdf with the real resume -->
+            <a href="assets/resume/shreya_goyal_resume.pdf" class="btn btn-ghost" download>Download Resume
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual art-zone">
+          <!-- Wobbly doodle frame around the circular profile photo -->
+          <div class="profile-frame">
+            <svg class="frame-svg" viewBox="0 0 320 320" aria-hidden="true">
+              <path d="M160 14C230 8 300 60 306 140c6 78-40 156-130 166C96 314 22 252 14 168 6 86 70 22 160 14Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 0"/>
+            </svg>
+            <!-- PLACEHOLDER PROFILE IMAGE: swap assets/images/profile.jpg with a real photo (square works best) -->
+            <img src="assets/images/profile.jpg" alt="Portrait of Shreya Goyal" class="profile-img" />
+          </div>
+          <span class="photo-note handwritten">that's me →</span>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-cue handwritten" aria-label="Scroll to about">scroll
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 4v14m0 0 5-5m-5 5-5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </section>
+
+    <!-- ===ABOUT=== -->
+    <section id="about" class="about reveal">
+      <div class="section-head">
+        <h2 class="section-title">About Me
+          <svg class="underline-doodle" viewBox="0 0 240 18" aria-hidden="true"><path d="M4 12c40-8 120-10 232-4" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
+        </h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>I'm a B.Tech Computer Science student specialising in <strong>AI &amp; Machine Learning</strong> at VIT Bhopal — but I've been an artist far longer than I've been a coder.</p>
+          <p>That mix is the whole point. I build full-stack products that are technically solid <em>and</em> actually pleasant to use, from AI-powered music apps to real-time IoT dashboards. I care about clean architecture, models that ship, and interfaces that feel human.</p>
+          <p>When I'm not writing code, I'm painting, running my art channel, or sketching ideas in the margins of my notebooks — sometimes those sketches become my next project.</p>
+          <span class="about-anno handwritten">that's me →</span>
+        </div>
+
+        <!-- Fun-facts card styled like a sketchbook sticky note -->
+        <aside class="facts-card art-zone" aria-label="Quick facts">
+          <span class="facts-pin" aria-hidden="true"></span>
+          <h3 class="facts-title handwritten">quick facts ✦</h3>
+          <ul class="facts-list">
+            <li>📍 VIT Bhopal · CSE (AI/ML)</li>
+            <li>🎨 Artist · 2.5k+ YouTube subscribers</li>
+            <li>💻 CGPA 9.36 / 10</li>
+            <li>🏆 8+ hackathon participations</li>
+            <li>🎵 Built Hookify, a music AI app</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===SKILLS=== -->
+    <section id="skills" class="skills reveal">
+      <div class="section-head">
+        <h2 class="section-title">What I Work With
+          <svg class="underline-doodle" viewBox="0 0 240 18" aria-hidden="true"><path d="M4 12c40-8 120-10 232-4" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
+        </h2>
+        <p class="section-sub handwritten">tools i actually use, not just list</p>
+      </div>
+
+      <div class="skills-groups">
+        <article class="skill-group">
+          <h3 class="skill-group-title">Languages</h3>
+          <div class="badges">
+            <span class="badge">C++</span><span class="badge">Python</span><span class="badge">TypeScript</span>
+            <span class="badge">JavaScript</span><span class="badge">HTML5</span><span class="badge">CSS3</span>
+          </div>
+        </article>
+
+        <article class="skill-group">
+          <h3 class="skill-group-title">Frameworks &amp; Libraries</h3>
+          <div class="badges">
+            <span class="badge">React</span><span class="badge">Next.js 16</span><span class="badge">Tailwind CSS</span>
+            <span class="badge">FastAPI</span><span class="badge">Flask</span><span class="badge">TensorFlow / Keras</span>
+            <span class="badge">Scikit-learn</span><span class="badge">librosa</span>
+          </div>
+        </article>
+
+        <article class="skill-group">
+          <h3 class="skill-group-title">Databases &amp; Cloud</h3>
+          <div class="badges">
+            <span class="badge">PostgreSQL (Supabase)</span><span class="badge">AWS</span><span class="badge">Vercel</span>
+            <span class="badge">Railway</span><span class="badge">Render</span>
+          </div>
+        </article>
+
+        <article class="skill-group">
+          <h3 class="skill-group-title">Tools</h3>
+          <div class="badges">
+            <span class="badge">Git</span><span class="badge">GitHub</span><span class="badge">VS Code</span>
+            <span class="badge">REST APIs</span><span class="badge">WebSocket</span><span class="badge">Google OAuth</span>
+          </div>
+        </article>
+
+        <article class="skill-group">
+          <h3 class="skill-group-title">CS Fundamentals</h3>
+          <div class="badges">
+            <span class="badge">DSA</span><span class="badge">OOP</span><span class="badge">DBMS</span>
+            <span class="badge">OS</span><span class="badge">Computer Networks</span><span class="badge">TOC</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===PROJECTS (BENTO GRID)=== -->
+    <section id="projects" class="projects reveal">
+      <div class="section-head">
+        <h2 class="section-title">Things I've Built
+          <svg class="underline-doodle" viewBox="0 0 240 18" aria-hidden="true"><path d="M4 12c40-8 120-10 232-4" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
+        </h2>
+        <p class="section-sub handwritten">deployed. real. usable.</p>
+      </div>
+
+      <div class="bento">
+        <!-- PROJECT 1 — HOOKIFY (large) -->
+        <article class="bento-card large">
+          <span class="corner-doodle" aria-hidden="true">✦</span>
+          <div class="card-top">
+            <h3 class="project-title">Hookify</h3>
+            <div class="tags"><span class="tag">Full-Stack</span><span class="tag">AI/ML</span><span class="tag">Music</span><span class="tag live">Live</span></div>
+          </div>
+          <p class="project-desc">A TikTok-style music web app. A custom AI detects the catchiest 15-second hook of any song using librosa audio analysis. 6 modules, 76 commits, deployed on Vercel + Railway.</p>
+          <div class="chips">
+            <span class="chip">Next.js 16</span><span class="chip">TypeScript</span><span class="chip">Python</span>
+            <span class="chip">FastAPI</span><span class="chip">Supabase</span><span class="chip">librosa</span><span class="chip">Vercel</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://hookify-app-chi.vercel.app" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Live Demo
+              <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M7 17 17 7m0 0H9m8 0v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="https://github.com/shreyagoyal9/hookify-app" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </article>
+
+        <!-- PROJECT 2 — SUPPLYLENS (large) -->
+        <article class="bento-card large">
+          <span class="corner-doodle" aria-hidden="true">✦</span>
+          <div class="card-top">
+            <h3 class="project-title">SupplyLens</h3>
+            <div class="tags"><span class="tag">AI/ML</span><span class="tag">IoT</span><span class="tag">Real-time</span><span class="tag">Microservices</span><span class="tag live">Live</span></div>
+          </div>
+          <p class="project-desc">A real-time cold-chain IoT anomaly-detection dashboard. Isolation Forest + LSTM on 10K+ sensor readings deliver 96% accuracy and 18-minute early breach alerts, across a 3-service microservice architecture.</p>
+          <div class="chips">
+            <span class="chip">React 18</span><span class="chip">Node.js</span><span class="chip">Python</span>
+            <span class="chip">Flask</span><span class="chip">Scikit-learn</span><span class="chip">TensorFlow</span><span class="chip">Supabase</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://supplylens-frontend.onrender.com" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Live Demo
+              <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M7 17 17 7m0 0H9m8 0v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="https://github.com/shreyagoyal9/supplylens" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </article>
+
+        <!-- PROJECT 3 — WHERE IS MY FACULTY (small) -->
+        <article class="bento-card small">
+          <span class="corner-doodle" aria-hidden="true">✦</span>
+          <div class="card-top">
+            <h3 class="project-title">Where Is My Faculty</h3>
+            <div class="tags"><span class="tag">Frontend</span><span class="tag">Team Project</span></div>
+          </div>
+          <p class="project-desc">An academic web app that lets students locate faculty availability in real time. I was the sole frontend developer, integrating a REST API through Git collaboration.</p>
+          <div class="chips">
+            <span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">Tailwind CSS</span><span class="chip">JavaScript</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://github.com/Shansit007/Where-is-My-Faculty" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===CERTIFICATIONS=== -->
+    <section id="certifications" class="certs reveal">
+      <div class="section-head">
+        <h2 class="section-title">Credentials
+          <svg class="underline-doodle" viewBox="0 0 240 18" aria-hidden="true"><path d="M4 12c40-8 120-10 232-4" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
+        </h2>
+        <p class="section-sub handwritten">things i learned and proved</p>
+      </div>
+
+      <div class="cert-grid">
+        <article class="cert-card">
+          <span class="cert-logo" aria-hidden="true">AWS</span>
+          <h3 class="cert-name">AWS Certification Course</h3>
+          <p class="cert-issuer">Intellipaat</p>
+          <p class="cert-date">Sep 2025</p>
+        </article>
+        <article class="cert-card">
+          <span class="cert-logo" aria-hidden="true">IoT</span>
+          <h3 class="cert-name">NPTEL IoT — Elite (76%)</h3>
+          <p class="cert-issuer">IIT Kharagpur</p>
+          <p class="cert-date">Jan–Apr 2026</p>
+        </article>
+        <article class="cert-card">
+          <span class="cert-logo" aria-hidden="true">☁︎</span>
+          <h3 class="cert-name">NPTEL Cloud Computing</h3>
+          <p class="cert-issuer">IIT Kharagpur</p>
+          <p class="cert-date">Jan–Apr 2025</p>
+        </article>
+        <article class="cert-card">
+          <span class="cert-logo" aria-hidden="true">ML</span>
+          <h3 class="cert-name">Applied ML in Python</h3>
+          <p class="cert-issuer">University of Michigan · Coursera</p>
+          <p class="cert-date">Dec 2025</p>
+        </article>
+        <article class="cert-card">
+          <span class="cert-logo" aria-hidden="true">SE</span>
+          <h3 class="cert-name">Software Engineering Simulation</h3>
+          <p class="cert-issuer">Quantium · Forage</p>
+          <p class="cert-date">May 2026</p>
+        </article>
+        <article class="cert-card">
+          <span class="cert-logo" aria-hidden="true">CBA</span>
+          <h3 class="cert-name">Intro to SE Simulation</h3>
+          <p class="cert-issuer">Commonwealth Bank · Forage</p>
+          <p class="cert-date">May 2026</p>
+        </article>
+        <article class="cert-card">
+          <span class="cert-logo" aria-hidden="true">SQL</span>
+          <h3 class="cert-name">Advanced SQL</h3>
+          <p class="cert-issuer">Boss Coder Academy</p>
+          <p class="cert-date">2025</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===ACHIEVEMENTS=== -->
+    <section id="achievements" class="achievements reveal">
+      <div class="section-head">
+        <h2 class="section-title">Beyond the Code
+          <svg class="underline-doodle" viewBox="0 0 240 18" aria-hidden="true"><path d="M4 12c40-8 120-10 232-4" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
+        </h2>
+      </div>
+
+      <div class="ach-grid">
+        <article class="ach-card">
+          <div class="ach-icon" aria-hidden="true">
+            <!-- doodle trophy -->
+            <svg viewBox="0 0 48 48" width="44" height="44"><path d="M14 8h20v8a10 10 0 0 1-20 0z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M14 11H8v3a6 6 0 0 0 6 6M34 11h6v3a6 6 0 0 1-6 6M20 28h8M18 40h12M24 28v12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="ach-heading">Tech &amp; Leadership</h3>
+          <ul class="ach-list">
+            <li>Class Representative for 4 courses (60-student cohort)</li>
+            <li>8+ national hackathons — IIT Madras Shaastra, IIT Kharagpur Kshitij, GeeksforGeeks, EY Techathon 4.0</li>
+          </ul>
+        </article>
+
+        <article class="ach-card art-zone">
+          <div class="ach-icon" aria-hidden="true">
+            <!-- doodle paintbrush -->
+            <svg viewBox="0 0 48 48" width="44" height="44"><path d="M30 6c4-4 12 4 8 8L24 28l-4-4z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M20 24l-2 2c-3 3-2 8-6 10-2 1-6 1-6 1s0-4 1-6c2-4 7-3 10-6l2-2z" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="ach-heading">Art &amp; Creativity</h3>
+          <ul class="ach-list">
+            <li>YouTube art channel — 2.5k+ subscribers</li>
+            <li>1st Prize, State-Level Slogan Competition (2019)</li>
+            <li>Rock painting, colour splash &amp; Deepotsav participation</li>
+            <li>Fine-arts and creative-event enthusiast</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===CONTACT=== -->
+    <section id="contact" class="contact reveal">
+      <div class="section-head">
+        <h2 class="section-title">Let's Connect
+          <svg class="underline-doodle" viewBox="0 0 240 18" aria-hidden="true"><path d="M4 12c40-8 120-10 232-4" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
+        </h2>
+        <p class="section-sub handwritten">i don't bite, promise ✦</p>
+      </div>
+
+      <div class="contact-card">
+        <!-- doodle envelope with little heart -->
+        <svg class="envelope-doodle" viewBox="0 0 90 70" aria-hidden="true">
+          <rect x="6" y="12" width="78" height="50" rx="6" fill="none" stroke="currentColor" stroke-width="3"/>
+          <path d="M8 16l37 26 37-26" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          <path d="M45 6c2-3 7-1 6 2 0 2-3 4-6 6-3-2-6-4-6-6-1-3 4-5 6-2z" fill="currentColor"/>
+        </svg>
+
+        <p class="contact-lead">Got an idea, a role, or just want to say hi? I'd love to hear from you.</p>
+
+        <div class="contact-buttons">
+          <a href="mailto:shreyagoyal9988@gmail.com" class="btn btn-primary">Email Me</a>
+          <a href="https://linkedin.com/in/shreyagoyal898" class="btn btn-ghost" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/shreyagoyal9" class="btn btn-ghost" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://youtube.com/@shreyagoyal" class="btn btn-ghost art-zone" target="_blank" rel="noopener">YouTube</a>
+          <!-- NOTE: update the YouTube handle above to the exact channel URL if different -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===FOOTER=== -->
+  <footer class="footer">
+    <p class="footer-main">designed &amp; built by Shreya Goyal <span class="footer-star">✦</span> 2026</p>
+    <p class="footer-note handwritten">yes, i coded this myself</p>
+  </footer>
+
+  <!-- ===SCRIPTS (defer so they run after DOM parse)=== -->
+  <script src="js/theme.js" defer></script>
+  <script src="js/typewriter.js" defer></script>
+  <script src="js/parallax.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

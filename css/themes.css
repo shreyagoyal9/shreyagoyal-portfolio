@@ -1,0 +1,43 @@
+/* ============================================================
+   themes.css
+   Light / dark mode colour variables ONLY.
+   Every colour in the project comes from these custom properties,
+   so the whole site can be re-themed from this one file.
+   ============================================================ */
+
+/* === LIGHT MODE (default) === */
+:root {
+  --bg:            #F5F0E8; /* warm light beige */
+  --text:          #2C2C2C; /* dark charcoal */
+  --accent:        #C17B5C; /* dusty rose / terracotta */
+  --accent-2:      #7A9E7E; /* sage green */
+  --card:          #FDFAF4; /* card background */
+  --border:        #E8E0D0; /* borders / dividers */
+
+  /* derived / helper tokens */
+  --text-soft:     #5b5650;
+  --accent-soft:   rgba(193, 123, 92, 0.14);
+  --accent2-soft:  rgba(122, 158, 126, 0.16);
+  --nav-bg:        rgba(245, 240, 232, 0.82);
+  --shadow:        0 10px 30px rgba(44, 44, 44, 0.08);
+  --shadow-lift:   0 18px 44px rgba(44, 44, 44, 0.14);
+  --card-blur:     none; /* frosted glass only kicks in for dark mode */
+}
+
+/* === DARK MODE === */
+:root[data-theme="dark"] {
+  --bg:            #0D1B2A; /* French navy blue */
+  --text:          #F0EBE3; /* warm off-white */
+  --accent:        #E8C87A; /* soft gold */
+  --accent-2:      #4ECDC4; /* muted teal */
+  --card:          #152236; /* card background */
+  --border:        #1E3248; /* borders / dividers */
+
+  --text-soft:     #b9c2cf;
+  --accent-soft:   rgba(232, 200, 122, 0.16);
+  --accent2-soft:  rgba(78, 205, 196, 0.16);
+  --nav-bg:        rgba(13, 27, 42, 0.7);
+  --shadow:        0 10px 30px rgba(0, 0, 0, 0.4);
+  --shadow-lift:   0 18px 46px rgba(0, 0, 0, 0.55);
+  --card-blur:     blur(10px); /* frosted glass cards */
+}
