@@ -5,6 +5,8 @@ French-navy dark mode, hand-drawn SVG doodles, a bento project grid, and tastefu
 micro-animations — built with **pure HTML + CSS + vanilla JavaScript**. No build
 step, no frameworks, no external JS libraries.
 
+**Live site:** <https://shreyagoyal9.github.io/shreyagoyal-portfolio/>
+
 ---
 
 ## ✦ Features
@@ -37,19 +39,12 @@ step, no frameworks, no external JS libraries.
 │   ├── animations.js       # Intersection Observer reveals
 │   └── main.js             # navbar, active link, menu, cursor
 ├── assets/
-│   ├── images/profile.jpg          # PLACEHOLDER — swap with a real photo
+│   ├── images/profile.jpg          # hero profile photo
 │   ├── doodles/*.svg               # standalone doodle assets
-│   └── resume/shreya_goyal_resume.pdf  # PLACEHOLDER — swap with real resume
-├── netlify.toml            # Netlify config (no build step)
+│   └── resume/shreya_goyal_resume.pdf  # downloadable resume
+├── netlify.toml            # optional Netlify config (no build step)
 └── README.md
 ```
-
----
-
-## ✦ Things to replace (placeholders)
-
-1. **Profile photo** → replace `assets/images/profile.jpg` (square image works best). See the comment in `index.html` near the hero.
-2. **Resume** → replace `assets/resume/shreya_goyal_resume.pdf` with your real PDF.
 
 ---
 
@@ -58,41 +53,40 @@ step, no frameworks, no external JS libraries.
 Because it is fully static, just open `index.html` in a browser — or serve it:
 
 ```bash
-# Python
 python3 -m http.server 8000
 # then visit http://localhost:8000
 ```
 
 ---
 
-## ✦ Deploy on Netlify (recommended)
+## ✦ Deployment (GitHub Pages)
 
-### Option A — Drag & drop (fastest, no Git needed)
-1. Go to <https://app.netlify.com/drop>.
-2. Drag this **entire project folder** onto the page.
-3. Netlify uploads it and gives you a live URL in seconds. Done.
+This site is deployed with **GitHub Pages** from the `main` branch:
 
-### Option B — Connect a Git repo (auto-deploys on push)
-1. Push this folder to a GitHub/GitLab repo.
-2. In Netlify: **Add new site → Import an existing project** → pick the repo.
-3. Build settings: leave **Build command empty**, set **Publish directory** to `.`
-   (these are already declared in `netlify.toml`).
-4. Click **Deploy**. Every push to the main branch redeploys automatically.
+1. Repo **Settings → Pages → Build and deployment**
+2. **Source:** Deploy from a branch
+3. **Branch:** `main`, folder `/ (root)` → **Save**
 
-To use a custom domain, go to **Site settings → Domain management** in Netlify.
+It goes live at <https://shreyagoyal9.github.io/shreyagoyal-portfolio/>.
+Every push to `main` redeploys automatically within a minute or two. All asset
+paths are relative, so the site works correctly from the repo subpath.
+
+To update the live site after editing:
+
+```bash
+git add -A
+git commit -m "Describe your change"
+git push
+```
 
 ---
 
-## ✦ Deploy on GitHub Pages (alternative)
+## ✦ Alternative: deploy on Netlify
 
-Since the site is static, GitHub Pages works too:
-1. Push this folder to a repo named e.g. `portfolio`.
-2. Repo **Settings → Pages → Build and deployment → Source: Deploy from a branch**.
-3. Choose branch `main` and folder `/ (root)`, then **Save**.
-4. Your site appears at `https://<username>.github.io/<repo>/` within a minute.
-
-> Note: on GitHub Pages the site is served from a subpath. All links here are
-> relative, so they work without changes.
+A `netlify.toml` is included for anyone who prefers Netlify (no build step needed).
+Drag the project folder onto <https://app.netlify.com/drop>, or connect the repo via
+**Add new site → Import an existing project** with the build command left empty and the
+publish directory set to `.`.
 
 ---
 
